@@ -4,7 +4,7 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  if [[ "$($shome/script/version | jq -r '.fogg_in_service')" != "$FOGG_IN_SERVICE_VERSION" ]]; then
+  if [[ "$($shome/script/version | jq -r '.fogg_instance')" != "$FOGG_INSTANCE_VERSION" ]]; then
     return 1
   fi
 
